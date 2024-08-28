@@ -46,6 +46,15 @@ class Manager < Employee
       emp.give_annual_raise
     end
   end
+
+  def fire_all_employees
+    # employees[0].active = false
+    # employees[1].active = false
+
+    employees.each do |fire|
+      fire.active = false
+    end
+  end
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
@@ -54,5 +63,8 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 employee1.print_info
 employee2.print_info
 manager.give_all_raises
+manager.fire_all_employees
 employee1.print_info
 employee2.print_info
+pp employee1
+pp employee2
