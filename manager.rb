@@ -37,10 +37,13 @@ class Manager < Employee
   def give_all_raises
     # pp @employees[0].give_annual_raise #works
     # pp @employees[1].give_annual_raise #works
-    index = 0
-    while index < 2
-      @employees[index].give_annual_raise
-      index += 1
+    # index = 0
+    # while index < 2
+    #   @employees[index].give_annual_raise
+    #   index += 1
+    # end
+    employees.each do |emp|
+      emp.give_annual_raise
     end
   end
 end
